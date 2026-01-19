@@ -1,0 +1,23 @@
+.utmp/
+
+
+# ===== Unity =====
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
+
+# ===== Visual Studio / Rider =====
+.vs/
+.vscode/
+*.csproj
+*.sln
+*.user
+*.userprefs
+
+# ===== OS =====
+.DS_Store
+Thumbs.db
+desktop.ini
