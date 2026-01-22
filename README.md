@@ -1,10 +1,13 @@
 # 🎓 Caça ao Diploma — Jogo em Realidade Aumentada (AR)
 
 ## 👩‍🎓 Autoras 
-**Nome:** Fernanda Sousa de Assunção Vale e Isabel Silva de Araujo
+**Nomes:**  
+- Fernanda Sousa de Assunção Vale  
+- Isabel Silva de Araújo  
+
 **Curso/Disciplina:** Computação Gráfica  
-**Instituição:** Universidade Federal do Maranhão
-**Ano:** 2025.2  
+**Instituição:** Universidade Federal do Maranhão (UFMA)  
+**Ano/Semestre:** 2025.2  
 
 ---
 
@@ -12,18 +15,27 @@
 
 O **Caça ao Diploma** é um jogo mobile educativo desenvolvido para **Android**, que utiliza **Realidade Aumentada (AR)** para transformar o ambiente real do usuário em um espaço interativo de aprendizado e gamificação.
 
-No jogo, o usuário explora o mundo real através da câmera do celular e encontra **tesouros**, **vilões** e **personagens especiais**, representando situações comuns da vida acadêmica.  
-O objetivo final é **conquistar o diploma**, acumulando aprovações nas disciplinas.
+No jogo, o usuário explora o ambiente real utilizando a câmera do celular. À medida que se movimenta, **elementos virtuais surgem automaticamente no espaço físico**, incentivando a exploração e a interação.
+
+O objetivo final do jogador é **conquistar o diploma**, acumulando aprovações nas disciplinas ao longo do jogo.
 
 Este projeto foi desenvolvido com foco em:
 - Aprendizado prático de Realidade Aumentada
-- Desenvolvimento mobile
+- Desenvolvimento de aplicações mobile
 - Gamificação educacional
-- Interação usuário–ambiente real
+- Integração entre mundo real e virtual
 
 ---
 
 ## 🎮 Descrição do Jogo
+
+### ✨ Mecânica Principal — Exploração com Brilho Misterioso
+- Os objetos **não surgem por toque no chão**
+- À medida que o jogador caminha, **brilhos misteriosos aparecem automaticamente** à frente da câmera
+- O jogador toca no brilho para **revelar o objeto oculto**
+- O brilho desaparece automaticamente caso não seja interagido
+- Link do apk no Google Drive: https://drive.google.com/file/d/1KRNOcHkiOTR_fGXnFIz73CHs4zz1BCFP/view?usp=sharing
+---
 
 ### 🟢 Tesouro — Aprovação
 Representa a **aprovação em uma disciplina**.
@@ -31,7 +43,7 @@ Representa a **aprovação em uma disciplina**.
 - Ao ser encontrado:
   - A barra de progresso aumenta
   - Um aviso positivo aparece na tela
-  - Um efeito visual de brilho é exibido
+  - Um efeito visual de destaque é exibido
 
 ---
 
@@ -41,95 +53,122 @@ Representa a **aprovação em uma disciplina**.
 - Reduz parcialmente o progresso do jogador
 
 #### ❌ Reprovação
-- Reduz mais significativamente o progresso
+- Reduz significativamente o progresso
 
-Os vilões possuem **diferenças visuais claras** para facilitar o entendimento do jogador.
+Os vilões possuem **modelos distintos**, permitindo rápida identificação visual.
 
 ---
 
 ### ⭐ Professores — Cards Premium
-Os professores aparecem como **cards colecionáveis** especiais.
+Os professores aparecem como **cards colecionáveis**.
 
-- Não alteram o progresso
-- São armazenados em um **Álbum Premium**
-- Incentivam a exploração contínua
+- Total de **10 professores**
+- Cada professor representa uma disciplina
+- Não alteram o progresso do diploma
+- São armazenados em um **Álbum Premium visual**
+- Após coletar todos, **nenhum novo card de professor é gerado**
+
+---
+
+### 📘 Álbum Premium
+- Interface visual dedicada
+- Cards bloqueados/desbloqueados
+- Contador de progresso: **x/10 professores coletados**
+- Scroll vertical para navegação
+- Acessível por botão durante o jogo
 
 ---
 
 ### 🏆 Objetivo Final
-Ao completar todas as disciplinas:
-- A barra de progresso chega a 100%
-- O jogador conquista o **Diploma**
-- Uma mensagem de vitória é exibida
+Ao completar **todas as disciplinas (10/10)**:
+- O jogo é encerrado
+- Uma **tela final** é exibida com mensagem de parabéns
+- O fundo escurece completamente
+- Um botão **Restart** permite reiniciar o jogo
+
+Após o término:
+- Nenhum novo objeto é gerado
+- A interação com o mundo AR é encerrada
 
 ---
 
 ## 🧠 Conceitos Trabalhados
 
 - Realidade Aumentada (AR)
+- Detecção de superfícies (sem renderização visível)
 - Interação por toque
-- Detecção de planos no mundo real
+- Raycasting físico
 - Gamificação educacional
-- Feedback visual e textual
-- Persistência de dados (salvamento de progresso)
+- Feedback visual
+- Persistência de dados (PlayerPrefs)
+- Gerenciamento de cenas
+- UI responsiva para dispositivos móveis
 
 ---
 
 ## 🛠️ Tecnologias e Ferramentas Utilizadas
 
 ### 📱 Plataforma
-- **Android**
+- Android
 
 ### 🧩 Engine e Frameworks
-- **Unity 3D**
-- **AR Foundation**
-- **ARCore (Google)**
+- Unity 3D
+- AR Foundation
+- ARCore (Google)
 
 ### 💻 Linguagem
-- **C#**
+- C#
 
 ### 🎨 Interface
-- **Canvas UI (Unity)**
-- **TextMeshPro**
+- Canvas UI (Screen Space Overlay)
+- TextMeshPro
 
-### 📦 Formatos de Modelo 3D
-- `.OBJ`
-- Prefabs do Unity + Models próprios das autoras
+### 📦 Modelagem
+- Modelos `.OBJ`
+- Prefabs personalizados
+- Ajustes de hierarquia (Root + Visual)
 
 ---
 
 ## ⚙️ Especificações Técnicas
 
-- **Detecção de superfícies:** AR Plane Manager  
-- **Interação por toque:** Raycast (Physics + AR Raycast)  
-- **Sistema de UI:** Canvas em Screen Space Overlay  
-- **Sistema de entrada:** Input Manager (Old)  
-- **Renderização:** URP (Universal Render Pipeline)  
-- **Persistência:** PlayerPrefs  
+- **Detecção de superfícies:** AR Plane Manager (planos invisíveis)
+- **Spawn de objetos:** automático, baseado na posição da câmera
+- **Interação:** Raycast físico
+- **Sistema de entrada:** Input Manager (Old)
+- **Renderização:** URP (Universal Render Pipeline)
+- **Persistência:** PlayerPrefs
+- **Gerenciamento de cenas:** Menu inicial + Cena AR
 
 ---
 
 ## 📁 Estrutura do Projeto
+
+```text
 Assets/
 ├── Scenes/
-│ └── CacaAoDiploma.unity
+│   ├── MenuScene.unity
+│   └── CacaAoDiploma.unity
 ├── Scripts/
-│ ├── ARTapGameController.cs
-│ ├── ARItem.cs
-│ ├── GameManager.cs
-│ ├── UIHud.cs
-│ ├── CollectEffect.cs
-│ └── ARDebugStatus.cs
+│   ├── ARTapGameController.cs
+│   ├── ARItem.cs
+│   ├── GameManager.cs
+│   ├── UIHud.cs
+│   ├── AlbumUI.cs
+│   ├── CollectEffect.cs
+│   └── ARMysteryGlow.cs
 ├── Prefabs/
-│ ├── Tesouro_Aprovacao.prefab
-│ ├── VILAO_NotaBaixa.prefab
-│ ├── VILAO_Reprovacao.prefab
-│ ├── Professor_1.prefab
-│ └── Professor_2.prefab
+│   ├── Tesouro_Aprovacao.prefab
+│   ├── VILAO_NotaBaixa.prefab
+│   ├── VILAO_Reprovacao.prefab
+│   ├── Professor_1.prefab
+│   ├── ...
+│   └── Professor_10.prefab
 ├── Materials/
 ├── Models/
+├── Textures/
 └── UI/
-
+```
 
 ---
 
@@ -152,15 +191,13 @@ Assets/
 
 ## 🧪 Funcionamento Esperado
 
-1. A câmera do celular é aberta
-2. Superfícies reais são detectadas (planos brancos)
-3. Ao tocar no chão:
-   - Um item é gerado
-4. Ao tocar no item:
-   - Tesouro → progresso aumenta
-   - Vilão → progresso diminui
-   - Professor → card coletado
-5. A UI é atualizada em tempo real
+1. Tela inicial com logo e botão Play
+2. Entrada no ambiente de Realidade Aumentada
+3. Brilhos surgem automaticamente à frente do jogador
+4. Toque no brilho revela: Tesouro; Vilão; Professor
+5. Interface atualizada em tempo real
+6. Álbum Premium acessível durante o jogo
+7. Tela final exibida ao completar o objetivo
 
 ---
 
