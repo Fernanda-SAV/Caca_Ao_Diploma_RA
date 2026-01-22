@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MenuScene.unity
+    guid: 4feba4f585bd3ff4fb89491522e804a6
+  - enabled: 1
     path: Assets/Scenes/CacaAoDiploma.unity
     guid: b28a3b4f9a99cdd40aa46ff17c539d24
   - enabled: 0

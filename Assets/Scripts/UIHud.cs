@@ -16,6 +16,10 @@ public class UIHud : MonoBehaviour
     public TMP_Text toastText;
     public float toastDuration = 1.6f;
 
+    [Header("Fim de Jogo")]
+    public GameObject endPanel;     // painel inteiro
+    public TMP_Text endText;        // texto do fim de jogo
+
     Coroutine toastRoutine;
 
     public void SetProgress(float value01)
@@ -45,5 +49,13 @@ public class UIHud : MonoBehaviour
     {
         yield return new WaitForSeconds(toastDuration);
         toastPanel.SetActive(false);
+    }
+
+    public void ShowEndScreen(string msg)
+    {
+        if (endPanel == null || endText == null) return;
+
+        endText.text = msg;
+        endPanel.SetActive(true);
     }
 }
